@@ -60,6 +60,25 @@ namespace DAL
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        public void EditEmployee(Employee_DTO nv)
+        {
+            SqlConnection conn = CreateConnection();
+            conn.Open();
+            //khỏi tạo instance của class SqlCommand
+            SqlCommand cmd = new SqlCommand();
+            //sử dụng thuộc tính CommandText để chỉ định tên Proc
+            cmd.CommandText = "spUpdateEmployee";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conn;
+            cmd.Parameters.Add(new SqlParameter("@IdEmployee", nv.IdEmployee));
+            cmd.Parameters.Add(new SqlParameter("@Name", nv.Name));
+            cmd.Parameters.Add(new SqlParameter("@DateBirth", nv.DateBirth));
+            cmd.Parameters.Add(new SqlParameter("@Gender", nv.Gender));
+            cmd.Parameters.Add(new SqlParameter("@PlaceBirth", nv.PlaceBirth));
+            cmd.Parameters.Add(new SqlParameter("@IdDepartment", nv.Department.IdDepartment));
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
         public void DeleteEmployee(Employee_DTO nv)
         {
             SqlConnection conn = CreateConnection();
