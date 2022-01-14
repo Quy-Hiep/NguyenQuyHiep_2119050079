@@ -14,7 +14,7 @@ namespace DAL
         {
             SqlConnection conn = CreateConnection();
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Department", conn);
+            SqlCommand cmd = new SqlCommand("select * from Department_2119050079", conn);
             SqlDataReader reader = cmd.ExecuteReader();
 
             List<Department_DTO> lstDepartment = new List<Department_DTO>();
