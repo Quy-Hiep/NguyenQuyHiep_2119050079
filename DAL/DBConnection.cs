@@ -14,7 +14,7 @@ namespace DAL
         public SqlConnection CreateConnection()
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source=HIEP\SQLEXPRESS;
+            conn.ConnectionString = @"Data Source=MSI\SQLEXPRESS;
                                     Initial Catalog=HR; User Id = sa; Password = sa";
 
             return conn;
