@@ -40,5 +40,19 @@ namespace DAL
             conn.Close();
             return lstNv;
         }
+        public void DeleteEmployee(Employee_DTO nv)
+        {
+            SqlConnection conn = CreateConnection();
+            conn.Open();
+            //khỏi tạo instance của class SqlCommand
+            SqlCommand cmd = new SqlCommand();
+            //sử dụng thuộc tính CommandText để chỉ định tên Proc
+            cmd.CommandText = "spDeleteEmployee";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conn;
+            cmd.Parameters.Add(new SqlParameter("@IdEmployee", nv.IdEmployee));
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
