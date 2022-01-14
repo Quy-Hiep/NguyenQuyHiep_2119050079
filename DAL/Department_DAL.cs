@@ -32,7 +32,7 @@ namespace DAL
         {
             SqlConnection conn = CreateConnection();
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from Department where IdDepartment=" + "'" + id.ToString() + "'", conn);
+            SqlCommand cmd = new SqlCommand("select * from Department_2119050079 where IdDepartment=" + "'" + id.ToString() + "'", conn);
             SqlDataReader reader = cmd.ExecuteReader();
 
             Department_DTO department = new Department_DTO();
