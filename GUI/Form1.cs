@@ -70,6 +70,11 @@ namespace GUI
                 nvBUS.NewEmployee(nv);
 
                 dgvEmployee.Rows.Add(nv.IdEmployee, nv.Name, nv.DateBirth, nv.Gender, nv.PlaceBirth, nv.Department.Name);
+            
+                tbmanv.Text = null;
+                tbhoten.Text = null;
+                tbnoisinh.Text = null;
+                cbgioitinh.Checked = false;
             }
 
         }
