@@ -1,4 +1,4 @@
-# NguyenQuyHiep_2119050079
+
 # Em quên gửi file sql tạo database trong google form, em xin gửi code ở đây ạ
 use master
 create database HR
